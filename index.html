@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aparan Guide 2.0</title>
+    <title>Aparan Guide 2.0 - Ապարանի ուղեցույց</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,15 +14,23 @@
             text-align: center;
         }
         header {
-            padding: 20px;
+            padding: 25px 20px;
             background-color: #1a1a2e;
             color: white;
-            font-size: 20px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+        }
+        header h1 {
+            margin: 0 0 15px 0;
+            font-size: 22px;
+        }
+        .search-box input {
+            width: 90%;
+            max-width: 400px;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 25px;
+            font-size: 15px;
+            outline: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
         .categories {
             display: flex;
@@ -41,6 +49,16 @@
             font-size: 14px;
             cursor: pointer;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: 0.2s;
+        }
+        .cat-btn:hover {
+            background-color: #1a1a2e;
+            color: white;
+        }
+        .section-title {
+            margin: 25px 0 15px 0;
+            font-size: 20px;
+            color: #1a1a2e;
         }
         .card {
             background: white;
@@ -54,27 +72,27 @@
         }
         .card-img-top {
             background-color: #e6effd;
-            height: 150px;
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 50px;
+            font-size: 45px;
         }
         .card-content {
             padding: 20px;
         }
         .card h3 {
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             color: #1a1a2e;
-            font-size: 22px;
+            font-size: 20px;
         }
         .card p {
             color: #666;
-            font-size: 14px;
-            margin: 5px 0;
+            font-size: 13px;
+            margin: 4px 0;
         }
         .card-desc {
-            margin: 15px 0;
+            margin: 12px 0;
             color: #444;
             font-size: 14px;
         }
@@ -99,42 +117,89 @@
         .btn-call { background-color: #27ae60; }
         .btn-whatsapp { background-color: #2ecc71; }
         .btn-map { background-color: #2563eb; width: 100%; margin-top: 10px; box-sizing: border-box; }
+        
+        .add-business {
+            background: #1a1a2e;
+            color: white;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+        .add-business a {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <span>📍 Aparan Guide 2.0</span>
+        <h1>📍 Aparan Guide 2.0</h1>
+        <div class="search-box">
+            <input type="text" placeholder="🔍 Որոնել խանութ, սրճարան, ծառայություն...">
+        </div>
     </header>
 
-    <!-- Կատեգորիաներ վերևում -->
+    <!-- Կատեգորիաներ -->
     <div class="categories">
-        <div class="cat-btn">🛒 Խանութ</div>
-        <div class="cat-btn">🔧 Վարպետ</div>
-        <div class="cat-btn">💼 Ծառայություն</div>
-        <div class="cat-btn">🏨 Հյուրատուն</div>
+        <div class="cat-btn">🛒 Խանութներ</div>
+        <div class="cat-btn">🍰 Գաթա / Սնունդ</div>
+        <div class="cat-btn">🔧 Վարպետներ</div>
+        <div class="cat-btn">🏨 Հյուրատներ</div>
     </div>
 
-    <!-- Բիզնեսի քարտ -->
+    <h2 class="section-title">Հայտնի վայրեր և բիզնեսներ</h2>
+
+    <!-- Քարտ 1 -->
     <div class="card">
-        <div class="card-img-top">
-            ☕
-        </div>
+        <div class="card-img-top">☕</div>
         <div class="card-content">
             <h3>Ապարանի սրճարան</h3>
-            <p>📁 սրճարան</p>
-            <p>📍 Ապարան</p>
+            <p>📁 Սնունդ և Սրճարաններ</p>
+            <p>📍 ք. Ապարան, Հիմնական փողոց</p>
+            <p>⏱️ Աշխատանքային ժամեր: 09:00 - 22:00</p>
             <div class="card-desc">
-                Օրինակային սրճարանի քարտ։ Փոխարինիր իրական տվյալներով։
+                Համեղ սուրճ, թարմ քաղցրավենիք և հարմարավետ միջավայր Ապարանի սրտում։
             </div>
-            
             <div class="btn-group">
                 <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
                 <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
             </div>
-            <a href="#" class="btn btn-map">🗺️ Քարտեզ</a>
+            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
         </div>
+    </div>
+
+    <!-- Քարտ 2 -->
+    <div class="card">
+        <div class="card-img-top">🍞</div>
+        <div class="card-content">
+            <h3>Ապարանի լեգենդար գաթա</h3>
+            <p>📁 Ավանդական խմորեղեն</p>
+            <p>📍 ք. Ապարան (Մայրուղու հարևանությամբ)</p>
+            <p>⏱️ Աշխատանքային ժամեր: 08:00 - 20:00</p>
+            <div class="card-desc">
+                Իսկական տնական ապարանյան գաթա՝ թխված ավանդական բաղադրատոմսով:
+            </div>
+            <div class="btn-group">
+                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
+                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
+            </div>
+            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
+        </div>
+    </div>
+
+    <!-- Բիզնեսի ավելացման բաժին -->
+    <div class="add-business">
+        <h2>Ունե՞ք բիզնես կամ ծառայություն Ապարանում</h2>
+        <p>Ավելացրեք ձեր տեղեկությունները ուղեցույցում և դարձեք տեսանելի բոլորի համար։</p>
+        <a href="tel:+37400000000">Ավելացնել բիզնեսս</a>
     </div>
 
 </body>
 </html>
+
