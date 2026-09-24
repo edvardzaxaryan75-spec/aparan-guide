@@ -1,5 +1,4 @@
-<    <!-- Կատեգորիաներ -->
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hy">
 <head>
     <meta charset="UTF-8">
@@ -7,108 +6,115 @@
     <title>Aparan Guide 2.0 - Ապարանի ուղեցույց</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f3f8;
+            background-color: #f4f6fb;
             color: #333;
             text-align: center;
         }
         header {
-            padding: 25px 20px;
-            background-color: #1a1a2e;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         header h1 {
             margin: 0 0 15px 0;
-            font-size: 22px;
+            font-size: 24px;
         }
         .search-box input {
             width: 90%;
-            max-width: 400px;
-            padding: 12px 15px;
+            max-width: 420px;
+            padding: 14px 20px;
             border: none;
-            border-radius: 25px;
+            border-radius: 30px;
             font-size: 15px;
             outline: none;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         .categories {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 8px;
-            padding: 15px;
+            gap: 10px;
+            padding: 20px;
             background: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            max-width: 800px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            max-width: 900px;
             margin: 0 auto;
         }
         .cat-btn {
-            background: #fff;
-            border: 1px solid #e1e4eb;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 13px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 10px 16px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
             cursor: pointer;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            transition: 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
         }
         .cat-btn:hover {
             background-color: #1a1a2e;
             color: white;
+            border-color: #1a1a2e;
         }
         .section-title {
-            margin: 25px 0 15px 0;
-            font-size: 20px;
+            margin: 30px 0 20px 0;
+            font-size: 22px;
             color: #1a1a2e;
+            font-weight: bold;
         }
         .card {
             background: white;
-            width: 90%;
-            max-width: 400px;
-            margin: 20px auto;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            width: 92%;
+            max-width: 420px;
+            margin: 25px auto;
+            border-radius: 24px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             overflow: hidden;
             text-align: left;
+            border: 1px solid #edf2f7;
         }
         .card-img-top {
-            background-color: #e6effd;
-            height: 140px;
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+            height: 160px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 45px;
+            font-size: 60px;
         }
         .card-content {
-            padding: 20px;
+            padding: 24px;
         }
         .card h3 {
-            margin: 0 0 8px 0;
+            margin: 0 0 10px 0;
             color: #1a1a2e;
-            font-size: 20px;
+            font-size: 22px;
+            font-weight: 700;
         }
         .card p {
-            color: #666;
-            font-size: 13px;
-            margin: 4px 0;
+            color: #64748b;
+            font-size: 14px;
+            margin: 6px 0;
         }
         .card-desc {
-            margin: 12px 0;
-            color: #444;
-            font-size: 14px;
+            margin: 16px 0;
+            color: #475569;
+            font-size: 15px;
+            line-height: 1.5;
         }
         .btn-group {
             display: flex;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 12px;
+            margin-top: 18px;
         }
         .btn {
             flex: 1;
-            padding: 10px;
+            padding: 12px;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             color: white;
             font-weight: bold;
             font-size: 14px;
@@ -116,26 +122,38 @@
             text-decoration: none;
             text-align: center;
             display: inline-block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .btn-call { background-color: #27ae60; }
-        .btn-whatsapp { background-color: #2ecc71; }
-        .btn-map { background-color: #2563eb; width: 100%; margin-top: 10px; box-sizing: border-box; }
+        .btn-call { background: linear-gradient(135deg, #27ae60, #219653); }
+        .btn-whatsapp { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+        .btn-map { background: linear-gradient(135deg, #2563eb, #1d4ed8); width: 100%; margin-top: 12px; box-sizing: border-box; }
         
         .add-business {
-            background: #1a1a2e;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: white;
-            padding: 30px 20px;
-            margin-top: 40px;
+            padding: 40px 20px;
+            margin-top: 50px;
+            border-top-left-radius: 30px;
+            border-top-right-radius-radius: 30px;
+        }
+        .add-business h2 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+        .add-business p {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-bottom: 20px;
         }
         .add-business a {
             display: inline-block;
             background: #27ae60;
             color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 12px 24px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
         }
     </style>
 </head>
@@ -144,11 +162,11 @@
     <header>
         <h1>📍 Aparan Guide 2.0</h1>
         <div class="search-box">
-            <input type="text" placeholder="🔍 Որոնել հյուրանոց, սրճարան, վարսավիր...">
+            <input type="text" placeholder="🔍 Որոնել վայր, սրճարան, ծառայություն...">
         </div>
     </header>
 
-    <!-- Բոլոր նշված կատեգորիաները -->
+    <!-- Կատեգորիաներ -->
     <div class="categories">
         <div class="cat-btn">🏨 Հյուրանոցներ</div>
         <div class="cat-btn">🌲 Հանգստյան գոտիներ</div>
@@ -161,19 +179,17 @@
         <div class="cat-btn">☕ Սրճարան</div>
     </div>
 
-    <h2 class="section-title">Առաջարկվող վայրեր</h2>
+    <h2 class="section-title">Ապարանի լավագույն վայրերը</h2>
 
-    <!-- Քարտ 1: Սրճարան -->
+    <!-- 1. Հյուրանոցներ -->
     <div class="card">
-        <div class="card-img-top">☕</div>
+        <div class="card-img-top">🏨</div>
         <div class="card-content">
-            <h3>Ապարանի սրճարան</h3>
-            <p>📁 Սրճարան / Food court</p>
-            <p>📍 ք. Ապարան, Կենտրոնական փողոց</p>
-            <p>⏱️ Աշխատանքային ժամեր: 09:00 - 23:00</p>
-            <div class="card-desc">
-                Համեղ սուրճ, տաք ուտեստներ և հարմարավետ միջավայր։
-            </div>
+            <h3>Ապարան Հյուրանոց</h3>
+            <p>📁 Հյուրանոցներ</p>
+            <p>📍 ք. Ապարան</p>
+            <p>⏱️ Աշխատանքային ժամեր: 24/7</p>
+            <div class="card-desc">Հարմարավետ համարներ և բարձրակարգ սպասարկում։</div>
             <div class="btn-group">
                 <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
                 <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
@@ -182,17 +198,134 @@
         </div>
     </div>
 
-    <!-- Քարտ 2: Հյուրանոց / Հանգիստ -->
+    <!-- 2. Հանգստյան գոտիներ -->
     <div class="card">
-        <div class="card-img-top">🏨</div>
+        <div class="card-img-top">🌲</div>
         <div class="card-content">
-            <h3>Ապարան Հանգստյան Գոտի</h3>
-            <p>📁 Հյուրանոցներ և Հանգստյան գոտիներ</p>
+            <h3>Ապարանի Հանգստյան Գոտի</h3>
+            <p>📁 Հանգստյան գոտիներ</p>
             <p>📍 Ապարանի տարածաշրջան</p>
-            <p>⏱️ Աշխատանքային ժամեր: 24/7</p>
-            <div class="card-desc">
-                Հարմարավետ քոթեջներ, բնություն և հանգիստ ձեր ընտանիքի համար։
+            <p>⏱️ Աշխատանքային ժամեր: 09:00 - 23:00</p>
+            <div class="card-desc">Հարմարավետ քոթեջներ, բնություն և հանգիստ ձեր ընտանիքի համար։</div>
+            <div class="btn-group">
+                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
+                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
             </div>
+            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
+        </div>
+    </div>
+
+    <!-- 3. Food court -->
+    <div class="card">
+        <div class="card-img-top">🍔</div>
+        <div class="card-content">
+            <h3>Aparan Food Court</h3>
+            <p>📁 Food court</p>
+            <p>📍 Մայրուղու հարևանությամբ</p>
+            <p>⏱️ Աշխատանքային ժամեր: 10:00 - 22:00</p>
+            <div class="card-desc">Արագ և համեղ սնունդ, մեծ տեսականի ձեր ճանապարհին։</div>
+            <div class="btn-group">
+                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
+                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
+            </div>
+            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
+        </div>
+    </div>
+
+    <!-- 4. Բենզալցակայան -->
+    <div class="card">
+        <div class="card-img-top">⛽</div>
+        <div class="card-content">
+            <h3>Բենզալցակայան Ապարանում</h3>
+            <p>📁 Բենզալցակայաններ</p>
+            <p>📍 Ապարանի մայրուղի</p>
+            <p>⏱️ Աշխատանքային ժամեր: 24/7</p>
+            <div class="card-desc">Բարձր որակի վառելիք և արագ սպասարկում։</div>
+            <div class="btn-group">
+                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
+                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
+            </div>
+            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
+        </div>
+    </div>
+
+    <!-- 5. Գազալցակայան -->
+    <div class="card">
+        <div class="card-img-top">🔵</div>
+        <div class="card-content">
+            <h3>Գազալցակայան</h3>
+            <p>📁 Գազալցակայաններ</p>
+            <p>📍 Ապարանի մատույցներ</p>
+            <p>⏱️ Աշխատանքային ժամեր: 24/7</p>
+            <div class="card-desc">Անվտանգ և արագ լիցքավորում շուրջօրյա։</div>
+            <div class="btn-group">
+                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
+                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
+            </div>
+            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
+        </div>
+    </div>
+
+    <!-- 6. Ավտոլվացում -->
+    <div class="card">
+        <div class="card-img-top">🚿</div>
+        <div class="card-content">
+            <h3>Ավտոլվացման կետ</h3>
+            <p>📁 Ավտոլվացման կետեր</p>
+            <p>📍 ք. Ապարան</p>
+            <p>⏱️ Աշխատանքային ժամեր: 09:00 - 20:00</p>
+            <div class="card-desc">Մեքենայի արագ և մաքուր լվացում բարձր որակով։</div>
+            <div class="btn-group">
+                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
+                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
+            </div>
+            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
+        </div>
+    </div>
+
+    <!-- 7. Մեքենաների նորոգում -->
+    <div class="card">
+        <div class="card-img-top">🔧</div>
+        <div class="card-content">
+            <h3>Ավտոտեխսպասարկում</h3>
+            <p>📁 Մեքենաների նորոգում</p>
+            <p>📍 ք. Ապարան</p>
+            <p>⏱️ Աշխատանքային ժամեր: 09:00 - 19:00</p>
+            <div class="card-desc">Ընթացային մասերի նորոգում, արհեստավարժ վարպետներ։</div>
+            <div class="btn-group">
+                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
+                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
+            </div>
+            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
+        </div>
+    </div>
+
+    <!-- 8. Վարսավիրանոց -->
+    <div class="card">
+        <div class="card-img-top">✂️</div>
+        <div class="card-content">
+            <h3>Ապարանի Վարսավիրանոց</h3>
+            <p>📁 Վարսավիրանոց</p>
+            <p>📍 ք. Ապարան, Կենտրոն</p>
+            <p>⏱️ Աշխատանքային ժամեր: 10:00 - 19:00</p>
+            <div class="card-desc">Կանացի և տղամարդու սանրվածքներ, ժամանակակից ոճ։</div>
+            <div class="btn-group">
+                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
+                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
+            </div>
+            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
+        </div>
+    </div>
+
+    <!-- 9. Սրճարան -->
+    <div class="card">
+        <div class="card-img-top">☕</div>
+        <div class="card-content">
+            <h3>Ապարանի Սրճարան</h3>
+            <p>📁 Սրճարան</p>
+            <p>📍 ք. Ապարան</p>
+            <p>⏱️ Աշխատանքային ժամեր: 09:00 - 23:00</p>
+            <div class="card-desc">Համեղ սուրճ, թարմ թխվածքներ և հաճելի մթնոլորտ։</div>
             <div class="btn-group">
                 <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
                 <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
