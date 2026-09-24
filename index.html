@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<    <!-- Կատեգորիաներ -->
+    <!DOCTYPE html>
 <html lang="hy">
 <head>
     <meta charset="UTF-8">
@@ -36,17 +37,19 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
             padding: 15px;
             background: white;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto;
         }
         .cat-btn {
             background: #fff;
             border: 1px solid #e1e4eb;
-            padding: 8px 15px;
+            padding: 8px 12px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 13px;
             cursor: pointer;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             transition: 0.2s;
@@ -141,30 +144,35 @@
     <header>
         <h1>📍 Aparan Guide 2.0</h1>
         <div class="search-box">
-            <input type="text" placeholder="🔍 Որոնել խանութ, սրճարան, ծառայություն...">
+            <input type="text" placeholder="🔍 Որոնել հյուրանոց, սրճարան, վարսավիր...">
         </div>
     </header>
 
-    <!-- Կատեգորիաներ -->
+    <!-- Բոլոր նշված կատեգորիաները -->
     <div class="categories">
-        <div class="cat-btn">🛒 Խանութներ</div>
-        <div class="cat-btn">🍰 Գաթա / Սնունդ</div>
-        <div class="cat-btn">🔧 Վարպետներ</div>
-        <div class="cat-btn">🏨 Հյուրատներ</div>
+        <div class="cat-btn">🏨 Հյուրանոցներ</div>
+        <div class="cat-btn">🌲 Հանգստյան գոտիներ</div>
+        <div class="cat-btn">🍔 Food court</div>
+        <div class="cat-btn">⛽ Բենզալցակայաններ</div>
+        <div class="cat-btn">🔵 Գազալցակայաններ</div>
+        <div class="cat-btn">🚿 Ավտոլվացում</div>
+        <div class="cat-btn">🔧 Մեքենաների նորոգում</div>
+        <div class="cat-btn">✂️ Վարսավիրանոց</div>
+        <div class="cat-btn">☕ Սրճարան</div>
     </div>
 
-    <h2 class="section-title">Հայտնի վայրեր և բիզնեսներ</h2>
+    <h2 class="section-title">Առաջարկվող վայրեր</h2>
 
-    <!-- Քարտ 1 -->
+    <!-- Քարտ 1: Սրճարան -->
     <div class="card">
         <div class="card-img-top">☕</div>
         <div class="card-content">
             <h3>Ապարանի սրճարան</h3>
-            <p>📁 Սնունդ և Սրճարաններ</p>
-            <p>📍 ք. Ապարան, Հիմնական փողոց</p>
-            <p>⏱️ Աշխատանքային ժամեր: 09:00 - 22:00</p>
+            <p>📁 Սրճարան / Food court</p>
+            <p>📍 ք. Ապարան, Կենտրոնական փողոց</p>
+            <p>⏱️ Աշխատանքային ժամեր: 09:00 - 23:00</p>
             <div class="card-desc">
-                Համեղ սուրճ, թարմ քաղցրավենիք և հարմարավետ միջավայր Ապարանի սրտում։
+                Համեղ սուրճ, տաք ուտեստներ և հարմարավետ միջավայր։
             </div>
             <div class="btn-group">
                 <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
@@ -174,16 +182,16 @@
         </div>
     </div>
 
-    <!-- Քարտ 2 -->
+    <!-- Քարտ 2: Հյուրանոց / Հանգիստ -->
     <div class="card">
-        <div class="card-img-top">🍞</div>
+        <div class="card-img-top">🏨</div>
         <div class="card-content">
-            <h3>Ապարանի լեգենդար գաթա</h3>
-            <p>📁 Ավանդական խմորեղեն</p>
-            <p>📍 ք. Ապարան (Մայրուղու հարևանությամբ)</p>
-            <p>⏱️ Աշխատանքային ժամեր: 08:00 - 20:00</p>
+            <h3>Ապարան Հանգստյան Գոտի</h3>
+            <p>📁 Հյուրանոցներ և Հանգստյան գոտիներ</p>
+            <p>📍 Ապարանի տարածաշրջան</p>
+            <p>⏱️ Աշխատանքային ժամեր: 24/7</p>
             <div class="card-desc">
-                Իսկական տնական ապարանյան գաթա՝ թխված ավանդական բաղադրատոմսով:
+                Հարմարավետ քոթեջներ, բնություն և հանգիստ ձեր ընտանիքի համար։
             </div>
             <div class="btn-group">
                 <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
@@ -202,4 +210,3 @@
 
 </body>
 </html>
-
