@@ -3,22 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aparan Guide - Ապարանի բիզնեսներ և ծառայություններ</title>
+    <title>Ապարան Guide - Ապարանի բիզնեսների և ծառայությունների ուղեցույց</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #17202a;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
             text-align: center;
-            padding: 50px;
+        }
+        header {
+            padding: 40px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         h1 {
             color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #555;
+        }
+        .search-box {
+            margin: 20px 0;
+        }
+        .search-box input {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .categories, .venues {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .card:hover {
+            background-color: #2c3e50;
+            color: white;
+        }
+        .contact-section {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+        .contact-section a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>Բարի գալուստ Ապարան Guide</h1>
-    <p>Ապարանի բիզնեսների, ծառայությունների և խանութների ուղեցույց։</p>
+
+    <header>
+        <h1>Բարի գալուստ Ապարան Guide</h1>
+        <p>Ապարանի բիզնեսների, ծառայությունների և խանութների ուղեցույց։</p>
+        
+        <!-- Որոնման տող -->
+        <div class="search-box">
+            <input type="text" placeholder="Որոնել խանութ, ծառայություն...">
+        </div>
+    </header>
+
+    <!-- Հիմնական կատեգորիաներ -->
+    <section>
+        <h2>Կատեգորիաներ</h2>
+        <div class="categories">
+            <div class="card">🛒 Խանութներ</div>
+            <div class="card">🍽️ Սնունդ և Սրճարաններ</div>
+            <div class="card">🔧 Ծառայություններ</div>
+            <div class="card">🏨 Հյուրանոցներ</div>
+        </div>
+    </section>
+
+    <!-- Հայտնի վայրեր -->
+    <section>
+        <h2>Հայտնի վայրեր</h2>
+        <div class="venues">
+            <div class="card">Ապարանի գաթա (Հացատուն)</div>
+            <div class="card">Տեղական մթերքների խանութ</div>
+        </div>
+    </section>
+
+    <!-- Կոնտակտներ / Ավելացրու բիզնեսդ -->
+    <div class="contact-section">
+        <h2>Ունե՞ք բիզնես Ապարանում</h2>
+        <p>Ավելացրեք ձեր տեղեկությունները ուղեցույցում։ Կապնվեք մեզ հետ՝ <a href="tel:+37400000000">Զանգահարել / WhatsApp</a></p>
+    </div>
+
 </body>
 </html>
+
