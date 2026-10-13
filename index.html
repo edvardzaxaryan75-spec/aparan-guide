@@ -4,202 +4,549 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Aparan Guide՝ Ապարանի խանութների, սրճարանների և ծառայությունների առցանց ուղեցույց։">
-<title>Aparan Guide — Ապարանի բիզնեսների ուղեցույց</title>
+<meta name="description" content="Aparan Guide՝ Ապարանի բիզնեսների և սննդի ուղեցույց։">
+<meta name="theme-color" content="#176b52">
+<title>Aparan Guide — Ապարանի ուղեցույց</title>
 <style>
-:root{--bg:#f5f7fb;--card:#fff;--ink:#182230;--muted:#64748b;--brand:#176b52;--line:#e5eaf0;--gold:#f2b84b}
+:root{--green:#176b52;--dark:#104b3b;--bg:#f4f7f5;--ink:#182230;--muted:#64748b;--line:#e5eaf0}
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
-a{color:inherit}button,input,select,textarea{font:inherit}
-header{background:linear-gradient(135deg,#104c3c,#19805f);color:white;padding:20px 16px 28px}
-.top{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.logo{font-size:21px;font-weight:900}
-.logo span{color:#b8f3d5}
-.top button{border:1px solid #ffffff70;background:#ffffff14;color:white;border-radius:12px;padding:10px 13px;font-weight:700}
-.hero{max-width:1100px;margin:30px auto 0}
-.eyebrow{font-size:12px;letter-spacing:1.8px;color:#b8f3d5;font-weight:800}
-.hero h1{font-size:clamp(29px,6vw,48px);line-height:1.12;margin:10px 0}
-.hero p{max-width:650px;color:#e0f4ea;line-height:1.6;margin:0 0 20px}
-.search{display:flex;gap:8px;max-width:680px}
-.search input{min-width:0;flex:1;padding:15px;border:0;border-radius:13px}
-.search button,.primary{border:0;border-radius:13px;background:var(--gold);color:#2b281e;padding:13px 17px;font-weight:800;cursor:pointer}
-main{max-width:1100px;margin:0 auto;padding:24px 16px 50px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.topbar{position:sticky;top:0;z-index:10;background:white;border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--green);font-size:18px}
+.logo-icon{width:40px;height:40px;border-radius:13px;background:var(--green);color:white;display:grid;place-items:center;font-size:22px}
+.nav-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:0;border-radius:11px;padding:11px 14px;font-weight:700}
+.green{background:var(--green);color:white}
+.green:hover{background:var(--dark)}
+.light{background:#eaf3ef;color:var(--green)}
+.outline{background:white;border:1px solid var(--line);color:var(--ink)}
+.container{max-width:1180px;margin:auto;padding:22px 16px}
+.hero{padding:38px 25px;border-radius:23px;color:white;background:linear-gradient(120deg,#104b3b,#176b52 70%,#278365)}
+.hero h1{font-size:clamp(30px,5vw,47px);margin:0 0 12px}
+.hero p{line-height:1.7;color:#e1f3eb;max-width:650px}
+.search-row{display:flex;gap:9px;max-width:680px}
+.search-row input{flex:1;min-width:0;padding:14px;border:0;border-radius:11px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 26px}
 .stat{background:white;border:1px solid var(--line);border-radius:15px;padding:15px}
-.stat strong{display:block;font-size:22px}
-.stat small{color:var(--muted)}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:30px 0 14px}
-.section-head h2{font-size:23px;margin:0}
-.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
-.categories{display:flex;gap:9px;overflow:auto;padding:2px 0 8px}
-.cat{white-space:nowrap;border:1px solid var(--line);background:white;border-radius:99px;padding:10px 14px;cursor:pointer;color:#334155}
-.cat.active{background:var(--brand);color:white;border-color:var(--brand)}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
-.business{background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 5px 18px #172b3d08}
-.cover{height:135px;background:linear-gradient(135deg,#dcefe6,#f5e8cc);display:grid;place-items:center;font-size:52px;position:relative}
-.cover small{position:absolute;left:12px;top:12px;background:#ffffffdc;border-radius:30px;padding:5px 9px;font-size:11px;color:#334155;font-weight:800}
-.biz-body{padding:15px;display:flex;flex-direction:column;flex:1}
-.biz-body h3{font-size:18px;margin:0 0 6px}
-.biz-body p{font-size:13px;line-height:1.5;color:var(--muted);margin:0 0 12px}
-.meta{font-size:13px;color:#475569;margin-bottom:7px}
-.actions{display:flex;gap:8px;margin-top:auto;padding-top:8px}
-.actions a,.actions button{flex:1;text-align:center;text-decoration:none;border-radius:10px;padding:10px 7px;font-size:13px;font-weight:800;border:1px solid var(--line);background:#fff}
-.actions .call{background:var(--brand);color:#fff;border-color:var(--brand)}
-.empty{background:white;border:1px dashed #cbd5e1;border-radius:15px;padding:30px;text-align:center;color:var(--muted);grid-column:1/-1}
-.notice{background:#fff7df;border:1px solid #f5df9d;color:#75551b;padding:13px 15px;border-radius:13px;font-size:13px;line-height:1.55;margin-top:22px}
-footer{background:#102b24;color:#d6e7df;padding:28px 16px;text-align:center;font-size:13px}
-footer strong{font-size:17px;color:white}
-.modal{position:fixed;inset:0;background:#07150f9c;display:none;align-items:center;justify-content:center;padding:14px;z-index:10}
+.stat strong{display:block;font-size:24px;color:var(--green)}
+.stat span{font-size:13px;color:var(--muted)}
+.heading{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:27px 0 15px}
+.heading h2{margin:0;font-size:25px}
+.heading p{margin:6px 0;color:var(--muted)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 20px}
+.chip{padding:9px 13px;border:1px solid var(--line);background:white;border-radius:22px}
+.chip.active{background:var(--green);border-color:var(--green);color:white}
+.business-grid,.food-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.business-card,.food-card{background:white;border:1px solid var(--line);border-radius:17px;overflow:hidden;min-width:0}
+.business-cover{height:180px;display:grid;place-items:center;background:#e5f0eb;font-size:55px;overflow:hidden}
+.business-cover img{width:100%;height:100%;object-fit:cover}
+.business-content,.food-info{padding:15px}
+.business-content h3,.food-info h3{margin:0 0 8px;font-size:19px;overflow-wrap:anywhere}
+.business-content p,.food-info p{color:var(--muted);font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+.tag{display:inline-block;font-size:12px;background:#eaf3ef;color:var(--green);padding:5px 9px;border-radius:20px;margin-bottom:9px}
+.card-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.card-actions a{text-decoration:none;font-size:13px;padding:9px 11px}
+.food-banner{margin:30px 0;min-height:300px;display:flex;align-items:center;border-radius:24px;overflow:hidden;color:white;background:linear-gradient(90deg,#18110ee8,#18110e25),url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1600&q=85') center/cover}
+.food-banner-content{padding:30px;max-width:650px}
+.food-banner h2{font-size:clamp(31px,5vw,46px);margin:0 0 10px}
+.food-banner p{line-height:1.7}
+.food-banner .btn{background:#ffb347;color:#2b1b0d}
+.food-page{display:none}
+.food-page.show{display:block}
+.main-page.hide{display:none}
+.food-hero{background:linear-gradient(120deg,#32170f,#842b18);color:white;padding:27px;border-radius:22px;margin-bottom:22px}
+.food-hero h1{font-size:clamp(29px,5vw,43px);margin:0 0 10px}
+.food-hero p{line-height:1.7;color:#ffe9dc}
+.food-photo{height:205px;overflow:hidden;position:relative;background:#eee}
+.food-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.food-label{position:absolute;left:11px;top:11px;background:white;border-radius:20px;padding:7px 10px;font-size:12px;font-weight:bold}
+.food-info h3{font-size:20px}
+.food-info p{min-height:42px}
+.food-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.price{font-weight:900;color:var(--green);font-size:17px}
+.food-order{background:var(--green);color:white;border:0;border-radius:10px;padding:10px 12px;font-weight:bold}
+.notice{margin:26px 0;padding:14px;background:#fff8e8;border:1px solid #f2dfb3;border-radius:13px;color:#79591b;font-size:13px;line-height:1.65}
+.empty{grid-column:1/-1;background:white;text-align:center;padding:28px;border-radius:15px;color:var(--muted)}
+footer{text-align:center;color:var(--muted);padding:27px 15px 35px;font-size:13px}
+.modal{display:none;position:fixed;inset:0;z-index:30;background:#101827b5;padding:15px;align-items:center;justify-content:center}
 .modal.open{display:flex}
-.panel{background:white;border-radius:18px;width:min(600px,100%);max-height:92vh;overflow:auto;padding:20px}
-.panel-head{display:flex;justify-content:space-between;align-items:center}
-.panel h2{margin:0 0 14px}
-.close{border:0;background:#eef2f5;border-radius:10px;padding:8px 12px}
-.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
-.field{display:flex;flex-direction:column;gap:5px}
+.modal-box{background:white;border-radius:18px;padding:20px;width:min(720px,100%);max-height:92vh;overflow:auto}
+.modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.modal-head h2{margin:0}
+.close{border:0;background:#edf1f5;border-radius:9px;padding:9px 12px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.field{display:flex;flex-direction:column;gap:6px}
 .field.full{grid-column:1/-1}
-.field label{font-size:13px;font-weight:750}
-.field input,.field select,.field textarea{border:1px solid #d6dee7;border-radius:10px;padding:11px;background:white;min-width:0}
+.field label{font-size:13px;font-weight:bold}
+.field input,.field select,.field textarea{width:100%;min-width:0;border:1px solid #dbe2e9;border-radius:10px;padding:11px;background:white}
 .field textarea{min-height:75px;resize:vertical}
-.form-actions{display:flex;gap:9px;margin-top:14px}
-.form-actions button{flex:1}
-.secondary{border:1px solid var(--line);background:white;border-radius:12px;padding:12px;font-weight:750}
-.admin-list{margin-top:20px;border-top:1px solid var(--line);padding-top:10px}
-.admin-row{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
-.admin-row button{border:1px solid #fecaca;background:#fff1f2;color:#b91c1c;border-radius:8px;padding:7px 9px}
-@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cover{height:115px}.hero{margin-top:23px}}
-@media(max-width:500px){.grid{grid-template-columns:1fr}.stats{gap:7px}.stat{padding:11px}.stat strong{font-size:19px}.search{flex-direction:column}.search button{width:100%}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head h2{font-size:21px}.top button{font-size:12px;padding:9px}}
+.admin-list{display:grid;gap:8px;margin-top:15px}
+.admin-item{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid var(--line);padding:10px;border-radius:10px}
+.admin-item span{overflow-wrap:anywhere}
+.small-btn{border:0;border-radius:8px;padding:8px 10px;background:#eaf3ef;color:var(--green);font-weight:bold}
+.delete{background:#feecec;color:#b42318}
+.hidden{display:none!important}
+@media(max-width:800px){.business-grid,.food-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){
+ .container{padding:15px 11px}.nav{padding:10px}
+ .logo{font-size:15px}.logo-icon{width:35px;height:35px}
+ .hero{padding:27px 17px}.search-row{flex-direction:column}
+ .stats{gap:7px}.stat{padding:11px 8px}.stat strong{font-size:20px}.stat span{font-size:11px}
+ .business-grid,.food-grid{grid-template-columns:1fr}
+ .business-cover{height:205px}.food-photo{height:225px}
+ .food-banner{min-height:275px}.food-banner-content{padding:21px}
+ .form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+ .modal{padding:7px}.modal-box{padding:14px}
+}
 </style>
 </head>
 <body>
-<header>
-<div class="top"><div class="logo">APARAN <span>GUIDE</span></div><button id="adminOpen">⚙ Ադմին</button></div>
-<div class="hero">
-<div class="eyebrow">Քո քաղաքի ուղեցույցը</div>
-<h1>Ապարանի բիզնեսները՝<br>մեկ վայրում</h1>
-<p>Գտիր խանութներ, սրճարաններ և ծառայություններ։ Տես կոնտակտները, կապ հաստատիր և բացահայտիր քո քաղաքի հնարավորությունները։</p>
-<div class="search"><input id="searchInput" type="search" placeholder="Որոնիր խանութ կամ ծառայություն…"><button id="searchBtn">Որոնել</button></div>
-</div>
+
+<header class="topbar">
+  <div class="nav">
+    <div class="logo"><div class="logo-icon">🏔️</div><span>APARAN GUIDE</span></div>
+    <div class="nav-actions">
+      <button class="btn light" id="homeBtn">🏠 Գլխավոր</button>
+      <button class="btn light" id="foodNavBtn">🍕 Food Court</button>
+      <button class="btn outline" id="adminOpen">⚙️ Ադմին</button>
+    </div>
+  </div>
 </header>
-<main>
-<div class="stats">
-<div class="stat"><strong id="businessCount">0</strong><small>բիզնես</small></div>
-<div class="stat"><strong id="categoryCount">0</strong><small>կատեգորիա</small></div>
-<div class="stat"><strong>24/7</strong><small>առցանց ուղեցույց</small></div>
-</div>
-<div class="section-head"><div><h2>Բացահայտիր Ապարանը</h2><p>Ընտրիր կատեգորիա կամ որոնիր բիզնես։</p></div></div>
-<div class="categories" id="categories"></div>
-<div class="section-head"><div><h2 id="listTitle">Բիզնեսներ</h2><p>Կոնտակտներն ու տվյալները լրացվում են ադմինի կողմից։</p></div></div>
-<div class="grid" id="businessGrid"></div>
-<div class="notice"><strong>Տեղեկացում․</strong> Ադմինի բաժնից ավելացրու միայն ստուգված բիզնեսների անուններ, հասցեներ ու հեռախոսահամարներ։ Այս նախնական տարբերակում տվյալները պահվում են միայն այն սարքի բրաուզերում, որտեղ ավելացվել են։ Բոլոր այցելուներին նույն տվյալները ցույց տալու համար անհրաժեշտ է միացնել առցանց տվյալների բազա։</div>
+
+<main class="container">
+  <div class="main-page" id="mainPage">
+    <section class="hero">
+      <h1>Բացահայտի՛ր Ապարանը</h1>
+      <p>Ապարանի խանութները, սրճարանները, սննդի վայրերն ու ծառայությունները՝ մեկ տեղում։ Գտի՛ր քեզ անհրաժեշտ բիզնեսը հեշտությամբ։</p>
+      <div class="search-row">
+        <input id="searchInput" type="search" placeholder="Որոնել բիզնես, խանութ կամ ծառայություն...">
+        <button class="btn green" id="searchBtn">Որոնել 🔍</button>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><strong id="businessCount">0</strong><span>Բիզնես</span></div>
+      <div class="stat"><strong id="categoryCount">0</strong><span>Կատեգորիա</span></div>
+      <div class="stat"><strong>24/7</strong><span>Առցանց ուղեցույց</span></div>
+    </section>
+
+    <section class="food-banner">
+      <div class="food-banner-content">
+        <h2>🍔 Aparan Food Court</h2>
+        <p>Պիցցա, բուրգեր, շաուրմա, ֆրի և քաղցրեղեն։ Բացահայտի՛ր համեղ ուտեստների բաժինը։</p>
+        <button class="btn" id="openFoodBanner">Տեսնել ուտեստները →</button>
+      </div>
+    </section>
+
+    <section>
+      <div class="heading">
+        <div><h2>Ապարանի բիզնեսները</h2><p>Տեղական խանութներ և ծառայություններ</p></div>
+      </div>
+      <div class="chips" id="categoryChips"></div>
+      <div class="business-grid" id="businessGrid"></div>
+    </section>
+
+    <div class="notice">
+      ℹ️ Այս տարբերակում ադմինի միջոցով ավելացված բիզնեսները պահվում են այս սարքի դիտարկչում։ Դրանք ավտոմատ չեն երևում մյուս այցելուներին։ Բոլորի համար ընդհանուր տվյալների բազա ունենալու համար անհրաժեշտ է առանձին սերվեր կամ տվյալների բազայի ծառայություն։
+    </div>
+  </div>
+
+  <section class="food-page" id="foodPage">
+    <div style="margin-bottom:15px"><button class="btn outline" id="backHome">← Գլխավոր էջ</button></div>
+    <div class="food-hero">
+      <h1>🍕 Aparan Food Court</h1>
+      <p>Քո սիրելի համերը՝ մեկ վայրում։ Ընտրի՛ր ուտեստների կատեգորիան և տես նկարներն ու օրինակային գները։</p>
+    </div>
+    <div class="heading"><div><h2>Մեր ուտեստները</h2><p>Ընտրիր քո սիրելի ուտեստը</p></div></div>
+    <div class="chips" id="foodChips"></div>
+    <div class="food-grid" id="foodGrid"></div>
+    <div class="notice">⚠️ Գները ցուցադրական են։ Նկարները նույնպես ցուցադրական են։ Իրական պատվերների ընդունում կամ վճարում դեռ միացված չէ։</div>
+  </section>
 </main>
-<footer><strong>APARAN GUIDE</strong><p>Ապարանի տեղական բիզնեսների առցանց ուղեցույց</p><span>Գտիր տեղականը • Աջակցիր տեղականին</span></footer>
-<div class="modal" id="adminModal" role="dialog" aria-modal="true">
-<div class="panel">
-<div class="panel-head"><h2>Ադմինի բաժին</h2><button class="close" id="closeAdmin">Փակել ✕</button></div>
-<div id="adminGate">
-<p style="color:#64748b;font-size:14px">Ցուցադրական մուտք է․ սա դեռ անվտանգ առցանց ադմինային համակարգ չէ։</p>
-<div class="field"><label for="adminPin">Ադմինի կոդ</label><input id="adminPin" type="password" placeholder="Մուտքագրիր կոդը" autocomplete="off"></div>
-<div class="form-actions"><button class="primary" id="unlockBtn">Մուտք գործել</button></div>
-<p id="gateMessage" style="color:#b91c1c;font-size:13px"></p>
+
+<footer><strong>APARAN GUIDE</strong> · Ապարանի տեղական ուղեցույց<br><br>© <span id="year"></span> Aparan Guide</footer>
+
+<div class="modal" id="foodModal">
+  <div class="modal-box">
+    <div class="modal-head"><h2 id="foodModalTitle">Ուտեստ</h2><button class="close" id="foodModalClose">✕</button></div>
+    <img id="foodModalImage" src="" alt="Ուտեստ" style="width:100%;height:240px;object-fit:cover;border-radius:13px;margin-top:15px">
+    <p id="foodModalDescription" style="line-height:1.7;color:#64748b"></p>
+    <h3 id="foodModalPrice" style="color:#176b52"></h3>
+    <button class="btn green" id="foodModalDone">Փակել</button>
+  </div>
 </div>
-<div id="adminTools" hidden>
-<p style="font-size:13px;color:#64748b">Ավելացրու, խմբագրիր կամ ջնջիր բիզնես։</p>
-<form id="businessForm">
-<input type="hidden" id="editId">
-<div class="formgrid">
-<div class="field"><label for="bizName">Բիզնեսի անուն *</label><input id="bizName" required maxlength="90" placeholder="Խանութի անունը"></div>
-<div class="field"><label for="bizCategory">Կատեգորիա *</label><select id="bizCategory" required><option>Մթերային խանութ</option><option>Հագուստ և կոշիկ</option><option>Շինանյութ</option><option>Ավտոապրանքներ</option><option>Սրճարան և ռեստորան</option><option>Գեղեցկություն</option><option>Տեխնիկա</option><option>Ծառայություններ</option><option>Այլ</option></select></div>
-<div class="field full"><label for="bizDescription">Նկարագրություն</label><textarea id="bizDescription" maxlength="400" placeholder="Ինչ է առաջարկում բիզնեսը"></textarea></div>
-<div class="field"><label for="bizPhone">Հեռախոս</label><input id="bizPhone" type="tel" placeholder="+374…"></div>
-<div class="field"><label for="bizAddress">Հասցե</label><input id="bizAddress" placeholder="Ապարան, …"></div>
-<div class="field full"><label for="bizImage">Նկարի հղում (ըստ ցանկության)</label><input id="bizImage" type="url" placeholder="https://…"></div>
-<div class="field full"><label for="bizMap">Քարտեզի հղում (ըստ ցանկության)</label><input id="bizMap" type="url" placeholder="Google Maps-ի հղում"></div>
+
+<div class="modal" id="adminModal">
+  <div class="modal-box">
+    <div class="modal-head"><h2>⚙️ Ադմինի բաժին</h2><button class="close" id="adminClose">✕</button></div>
+    <div id="adminGate">
+      <p>Մուտքագրի՛ր ադմինի PIN կոդը։</p>
+      <div class="field"><label for="adminPin">PIN կոդ</label><input id="adminPin" type="password" placeholder="Մուտքագրել PIN-ը"></div>
+      <button class="btn green" id="adminLogin" style="margin-top:12px">Մուտք գործել</button>
+      <p id="adminError" style="color:#b42318"></p>
+      <p style="font-size:12px;color:#64748b">PIN-ը ցուցադրական պաշտպանություն է և իրական անվտանգություն չի ապահովում։</p>
+    </div>
+
+    <div id="adminTools" class="hidden">
+      <div class="heading"><div><h2 id="formTitle" style="font-size:20px">Ավելացնել բիզնես</h2><p>Լրացրո՛ւ տվյալները</p></div></div>
+      <form id="businessForm">
+        <input type="hidden" id="businessId">
+        <div class="form-grid">
+          <div class="field"><label for="businessName">Բիզնեսի անուն *</label><input id="businessName" required placeholder="Օր.՝ Ապարանի սրճարան"></div>
+          <div class="field"><label for="businessCategory">Կատեգորիա *</label><select id="businessCategory" required></select></div>
+          <div class="field"><label for="businessPhone">Հեռախոսահամար</label><input id="businessPhone" placeholder="+374..."></div>
+          <div class="field"><label for="businessAddress">Հասցե</label><input id="businessAddress" placeholder="Փողոց, հասցե"></div>
+          <div class="field full"><label for="businessDescription">Նկարագրություն</label><textarea id="businessDescription" placeholder="Բիզնեսի մասին տեղեկություն"></textarea></div>
+          <div class="field full"><label for="businessImage">Նկարի հղում (URL)</label><input id="businessImage" type="url" placeholder="https://..."></div>
+          <div class="field full"><label for="businessMap">Google Maps-ի հղում</label><input id="businessMap" type="url" placeholder="https://maps.google.com/..."></div>
+        </div>
+        <div class="nav-actions" style="margin-top:15px">
+          <button class="btn green" type="submit">💾 Պահպանել</button>
+          <button class="btn outline" type="button" id="formReset">Մաքրել դաշտերը</button>
+        </div>
+      </form>
+      <div class="heading"><div><h2 style="font-size:20px">Բիզնեսների ցանկ</h2><p>Խմբագրի՛ր կամ ջնջի՛ր</p></div></div>
+      <div class="admin-list" id="adminList"></div>
+      <div class="nav-actions" style="margin-top:18px">
+        <button class="btn light" id="exportBtn">⬇️ Պահուստային JSON</button>
+        <button class="btn outline" id="importBtn">⬆️ Ներմուծել JSON</button>
+        <input type="file" id="importFile" accept=".json,application/json" class="hidden">
+      </div>
+    </div>
+  </div>
 </div>
-<div class="form-actions"><button class="primary" type="submit">Պահպանել բիզնեսը</button><button class="secondary" type="button" id="clearForm">Մաքրել</button></div>
-</form>
-<div class="admin-list"><h3>Ավելացված բիզնեսներ</h3><div id="adminBusinessList"></div></div>
-<button class="secondary" id="exportBtn" style="width:100%;margin-top:12px">Ներբեռնել պահուստային JSON</button>
-</div>
-</div>
-</div>
+
 <script>
-const STORAGE_KEY='aparanGuideBusinessesV1';
-const categories=['Բոլորը','Մթերային խանութ','Հագուստ և կոշիկ','Շինանյութ','Ավտոապրանքներ','Սրճարան և ռեստորան','Գեղեցկություն','Տեխնիկա','Ծառայություններ','Այլ'];
-const icons={'Մթերային խանութ':'🛒','Հագուստ և կոշիկ':'👕','Շինանյութ':'🧱','Ավտոապրանքներ':'🚗','Սրճարան և ռեստորան':'☕','Գեղեցկություն':'💈','Տեխնիկա':'📱','Ծառայություններ':'🧰','Այլ':'🏪'};
-let businesses=loadBusinesses(),activeCategory='Բոլորը',adminUnlocked=false;
-function loadBusinesses(){try{const d=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');return Array.isArray(d)?d:[]}catch(e){return []}}
-function saveBusinesses(){localStorage.setItem(STORAGE_KEY,JSON.stringify(businesses))}
-function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function safeUrl(s=''){try{const u=new URL(s);return ['http:','https:'].includes(u.protocol)?u.href:''}catch(e){return ''}}
+const STORAGE_KEY = 'aparanGuideBusinessesV1';
+const categories = [
+  'Մթերային խանութ','Հագուստ և կոշիկ','Շինանյութ','Ավտոապրանքներ',
+  'Սրճարան և ռեստորան','Գեղեցկություն','Տեխնիկա','Ծառայություններ','Այլ'
+];
+const categoryIcons = {
+  'Մթերային խանութ':'🛒','Հագուստ և կոշիկ':'👕','Շինանյութ':'🧱',
+  'Ավտոապրանքներ':'🚗','Սրճարան և ռեստորան':'☕','Գեղեցկություն':'💇',
+  'Տեխնիկա':'📱','Ծառայություններ':'🛠️','Այլ':'📍'
+};
+
+let businesses = loadBusinesses();
+let activeCategory = 'Բոլորը';
+let activeFoodCategory = 'Բոլորը';
+let adminUnlocked = false;
+
+function loadBusinesses(){
+  try{
+    const saved=localStorage.getItem(STORAGE_KEY);
+    return saved ? JSON.parse(saved) : [];
+  }catch(e){return [];}
+}
+function saveBusinesses(){
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(businesses));
+}
+function esc(value){
+  return String(value??'').replace(/[&<>"']/g,c=>({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  })[c]);
+}
+function safeUrl(value){
+  try{
+    const u=new URL(String(value||''));
+    return ['http:','https:'].includes(u.protocol)?u.href:'';
+  }catch(e){return '';}
+}
+function safePhone(value){
+  return String(value||'').replace(/[^\d+]/g,'');
+}
+
 function renderCategories(){
-const el=document.getElementById('categories');
-el.innerHTML=categories.map(c=>`<button class="cat ${activeCategory===c?'active':''}" data-cat="${esc(c)}">${c==='Բոլորը'?'✨':(icons[c]||'🏪')} ${esc(c)}</button>`).join('');
-el.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{activeCategory=b.dataset.cat;renderCategories();renderBusinesses()});
+  const all=['Բոլորը',...new Set([...categories,...businesses.map(b=>b.category).filter(Boolean)])];
+  document.getElementById('categoryChips').innerHTML=all.map(c=>
+    `<button class="chip ${activeCategory===c?'active':''}" data-cat="${esc(c)}">${esc(c)}</button>`
+  ).join('');
+  document.querySelectorAll('#categoryChips [data-cat]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      activeCategory=btn.dataset.cat;
+      renderCategories();
+      renderBusinesses();
+    });
+  });
+  document.getElementById('categoryCount').textContent=all.length-1;
+  const select=document.getElementById('businessCategory');
+  const old=select.value;
+  select.innerHTML=[...new Set([...categories,...businesses.map(b=>b.category).filter(Boolean)])]
+    .map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+  if([...select.options].some(o=>o.value===old))select.value=old;
 }
+
 function renderBusinesses(){
-const q=document.getElementById('searchInput').value.trim().toLocaleLowerCase('hy');
-const list=businesses.filter(b=>(activeCategory==='Բոլորը'||b.category===activeCategory)&&[b.name,b.category,b.description,b.address].join(' ').toLocaleLowerCase('hy').includes(q));
-document.getElementById('businessCount').textContent=businesses.length;
-document.getElementById('categoryCount').textContent=new Set(businesses.map(b=>b.category)).size;
-document.getElementById('listTitle').textContent=activeCategory==='Բոլորը'?'Բոլոր բիզնեսները':activeCategory;
-const grid=document.getElementById('businessGrid');
-if(!list.length){grid.innerHTML=`<div class="empty"><div style="font-size:34px">🏪</div><strong>${businesses.length?'Համապատասխան բիզնես չգտնվեց':'Բիզնեսների ցանկը դեռ դատարկ է'}</strong><p>${businesses.length?'Փորձիր այլ որոնում կամ կատեգորիա։':'Ադմինի բաժնից ավելացրու Ապարանի առաջին իրական բիզնեսը։'}</p></div>`;return}
-grid.innerHTML=list.map(b=>{
-const image=safeUrl(b.image);
-const cover=image?`<img src="${esc(image)}" alt="${esc(b.name)}" style="width:100%;height:100%;object-fit:cover">`:(icons[b.category]||'🏪');
-const phone=(b.phone||'').replace(/[^\d+]/g,'');
-const map=safeUrl(b.map);
-return `<article class="business"><div class="cover">${cover}<small>${esc(b.category)}</small></div><div class="biz-body"><h3>${esc(b.name)}</h3><p>${esc(b.description||'Տեղական բիզնես՝ Ապարանում։ Կապ հաստատիր՝ մանրամասներն իմանալու համար։')}</p>${b.address?`<div class="meta">📍 ${esc(b.address)}</div>`:''}${b.phone?`<div class="meta">📞 ${esc(b.phone)}</div>`:''}<div class="actions">${phone?`<a class="call" href="tel:${esc(phone)}">Զանգահարել</a>`:''}${map?`<a href="${esc(map)}" target="_blank" rel="noopener">Քարտեզ</a>`:''}${!phone&&!map?`<button type="button" onclick="alert('Կոնտակտային տվյալները դեռ լրացված չեն։')">Մանրամասներ</button>`:''}</div></div></article>`
-}).join('');
+  const grid=document.getElementById('businessGrid');
+  const q=document.getElementById('searchInput').value.trim().toLowerCase();
+  const list=businesses.filter(b=>{
+    const categoryOk=activeCategory==='Բոլորը'||b.category===activeCategory;
+    const haystack=`${b.name||''} ${b.category||''} ${b.description||''} ${b.address||''}`.toLowerCase();
+    return categoryOk&&haystack.includes(q);
+  });
+  document.getElementById('businessCount').textContent=businesses.length;
+  if(!list.length){
+    grid.innerHTML='<div class="empty"><div style="font-size:38px">🔎</div><h3>Բիզնեսներ դեռ չկան</h3><p>Ավելացրու բիզնեսը ադմինի բաժնից կամ փոխիր որոնումը։</p></div>';
+    return;
+  }
+  grid.innerHTML=list.map(b=>{
+    const image=safeUrl(b.image),map=safeUrl(b.map),phone=safePhone(b.phone);
+    return `<article class="business-card">
+      <div class="business-cover">${image
+        ?`<img src="${esc(image)}" alt="${esc(b.name)}" loading="lazy" onerror="this.remove()">`
+        :(categoryIcons[b.category]||'📍')}</div>
+      <div class="business-content">
+        <span class="tag">${esc(b.category||'Այլ')}</span>
+        <h3>${esc(b.name)}</h3>
+        <p>${esc(b.description||'Տեղական բիզնես՝ Aparan Guide-ում։')}</p>
+        ${b.address?`<p>📍 ${esc(b.address)}</p>`:''}
+        <div class="card-actions">
+          ${phone?`<a class="btn green" href="tel:${esc(phone)}">📞 Զանգահարել</a>`:''}
+          ${map?`<a class="btn outline" href="${esc(map)}" target="_blank" rel="noopener">🗺️ Քարտեզ</a>`:''}
+        </div>
+      </div></article>`;
+  }).join('');
 }
-const modal=document.getElementById('adminModal');
-document.getElementById('adminOpen').onclick=()=>{modal.classList.add('open');renderAdminList()};
-document.getElementById('closeAdmin').onclick=()=>modal.classList.remove('open');
-modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open')};
-document.getElementById('unlockBtn').onclick=()=>{
-if(document.getElementById('adminPin').value==='APARAN2026'){
-adminUnlocked=true;document.getElementById('adminGate').hidden=true;document.getElementById('adminTools').hidden=false;renderAdminList()
-}else document.getElementById('gateMessage').textContent='Կոդը սխալ է։ Ցուցադրական կոդը՝ APARAN2026։ Սա անվտանգ մուտքի համակարգ չէ։'
-};
-function clearForm(){document.getElementById('businessForm').reset();document.getElementById('editId').value=''}
-document.getElementById('clearForm').onclick=clearForm;
-document.getElementById('businessForm').onsubmit=e=>{
-e.preventDefault();if(!adminUnlocked)return;
-const id=document.getElementById('editId').value||String(Date.now());
-const b={id,name:document.getElementById('bizName').value.trim(),category:document.getElementById('bizCategory').value,description:document.getElementById('bizDescription').value.trim(),phone:document.getElementById('bizPhone').value.trim(),address:document.getElementById('bizAddress').value.trim(),image:document.getElementById('bizImage').value.trim(),map:document.getElementById('bizMap').value.trim()};
-if(!b.name)return;
-const i=businesses.findIndex(x=>x.id===id);if(i>=0)businesses[i]=b;else businesses.unshift(b);
-saveBusinesses();clearForm();renderCategories();renderBusinesses();renderAdminList();
-};
+
+/* Food Court */
+const foodItems=[
+  {name:'Պիցցա',cat:'Պիցցա',price:'2,500 դրամից',tag:'🍕 Սիրված',
+   desc:'Համեղ պիցցա՝ պանրով, լոլիկով և քո սիրելի հավելումներով։',
+   img:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85'},
+  {name:'Չիզբուրգեր',cat:'Բուրգեր',price:'1,800 դրամից',tag:'🍔 Հագեցնող',
+   desc:'Հյութալի բուրգեր՝ պանրով, բանջարեղենով և սոուսով։',
+   img:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85'},
+  {name:'Շաուրմա',cat:'Շաուրմա',price:'1,200 դրամից',tag:'🌯 Արագ սնունդ',
+   desc:'Շաուրմա՝ մսով, թարմ բանջարեղենով և համեղ սոուսով։',
+   img:'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=900&q=85'},
+  {name:'Կարտոֆիլ ֆրի',cat:'Խորտիկ',price:'700 դրամից',tag:'🍟 Խորտիկ',
+   desc:'Ոսկեգույն, խրթխրթան կարտոֆիլ ֆրի։',
+   img:'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85'},
+  {name:'Հոթ-դոգ',cat:'Խորտիկ',price:'1,000 դրամից',tag:'🌭 Արագ սնունդ',
+   desc:'Հոթ-դոգ՝ նրբերշիկով և հավելումներով։',
+   img:'https://images.unsplash.com/photo-1612392062126-2f1a4e7a6b7c?auto=format&fit=crop&w=900&q=85'},
+  {name:'Սառը ըմպելիք',cat:'Ըմպելիք',price:'500 դրամից',tag:'🥤 Թարմացնող',
+   desc:'Թարմացնող ըմպելիքներ՝ ճաշի կամ խորտիկի հետ։',
+   img:'https://images.unsplash.com/photo-1513558161293-c daf765edfd?auto=format&fit=crop&w=900&q=85'.replace('c daf','cdaf')},
+  {name:'Սուրճ',cat:'Ըմպելիք',price:'600 դրամից',tag:'☕ Սուրճի պահ',
+   desc:'Բուրավետ սուրճ՝ օրդ ավելի լավ սկսելու համար։',
+   img:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85'},
+  {name:'Դոնաթ',cat:'Քաղցրեղեն',price:'700 դրամից',tag:'🍩 Քաղցր',
+   desc:'Քաղցր հյուրասիրություն սուրճի կամ թեյի հետ։',
+   img:'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85'},
+  {name:'Պաղպաղակ',cat:'Քաղցրեղեն',price:'800 դրամից',tag:'🍨 Զովացնող',
+   desc:'Քաղցր ու զովացնող դեսերտ։',
+   img:'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85'}
+];
+
+function openFood(){
+  document.getElementById('mainPage').classList.add('hide');
+  document.getElementById('foodPage').classList.add('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function openHome(){
+  document.getElementById('foodPage').classList.remove('show');
+  document.getElementById('mainPage').classList.remove('hide');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function renderFoodChips(){
+  const cats=['Բոլորը',...new Set(foodItems.map(f=>f.cat))];
+  const holder=document.getElementById('foodChips');
+  holder.innerHTML=cats.map(c=>
+    `<button class="chip ${activeFoodCategory===c?'active':''}" data-foodcat="${esc(c)}">${esc(c)}</button>`
+  ).join('');
+  holder.querySelectorAll('[data-foodcat]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      activeFoodCategory=btn.dataset.foodcat;
+      renderFoodChips();
+      renderFood();
+    });
+  });
+}
+function renderFood(){
+  const list=foodItems.filter(f=>activeFoodCategory==='Բոլորը'||f.cat===activeFoodCategory);
+  document.getElementById('foodGrid').innerHTML=list.map((f,i)=>`
+    <article class="food-card">
+      <div class="food-photo">
+        <img src="${esc(f.img)}" alt="${esc(f.name)}" loading="lazy">
+        <span class="food-label">${esc(f.tag)}</span>
+      </div>
+      <div class="food-info">
+        <h3>${esc(f.name)}</h3>
+        <p>${esc(f.desc)}</p>
+        <div class="food-bottom">
+          <span class="price">${esc(f.price)}</span>
+          <button class="food-order" data-foodindex="${foodItems.indexOf(f)}">Տեսնել</button>
+        </div>
+      </div>
+    </article>`).join('');
+  document.querySelectorAll('[data-foodindex]').forEach(btn=>{
+    btn.addEventListener('click',()=>showFoodDetails(foodItems[Number(btn.dataset.foodindex)]));
+  });
+}
+function showFoodDetails(food){
+  document.getElementById('foodModalTitle').textContent=food.name;
+  document.getElementById('foodModalImage').src=food.img;
+  document.getElementById('foodModalDescription').textContent=food.desc;
+  document.getElementById('foodModalPrice').textContent=food.price;
+  document.getElementById('foodModal').classList.add('open');
+}
+function closeFoodModal(){
+  document.getElementById('foodModal').classList.remove('open');
+}
+
+/* Admin */
+function openAdmin(){
+  document.getElementById('adminModal').classList.add('open');
+  if(adminUnlocked){
+    document.getElementById('adminGate').classList.add('hidden');
+    document.getElementById('adminTools').classList.remove('hidden');
+  }
+}
+function closeAdmin(){
+  document.getElementById('adminModal').classList.remove('open');
+}
+function resetForm(){
+  document.getElementById('businessForm').reset();
+  document.getElementById('businessId').value='';
+  document.getElementById('formTitle').textContent='Ավելացնել բիզնես';
+}
 function renderAdminList(){
-const el=document.getElementById('adminBusinessList');
-if(!businesses.length){el.innerHTML='<p style="color:#64748b;font-size:13px">Դեռ բիզնեսներ չկան։</p>';return}
-el.innerHTML=businesses.map(b=>`<div class="admin-row"><span><strong>${esc(b.name)}</strong><br><small>${esc(b.category)}</small></span><span><button data-edit="${esc(b.id)}" style="border-color:#cbd5e1;background:#f8fafc;color:#334155">Խմբագրել</button> <button data-delete="${esc(b.id)}">Ջնջել</button></span></div>`).join('');
-el.querySelectorAll('[data-edit]').forEach(btn=>btn.onclick=()=>{
-const b=businesses.find(x=>x.id===btn.dataset.edit);if(!b)return;
-document.getElementById('editId').value=b.id;
-document.getElementById('bizName').value=b.name;
-document.getElementById('bizCategory').value=b.category;
-document.getElementById('bizDescription').value=b.description||'';
-document.getElementById('bizPhone').value=b.phone||'';
-document.getElementById('bizAddress').value=b.address||'';
-document.getElementById('bizImage').value=b.image||'';
-document.getElementById('bizMap').value=b.map||'';
-document.getElementById('businessForm').scrollIntoView({behavior:'smooth'})
-});
-el.querySelectorAll('[data-delete]').forEach(btn=>btn.onclick=()=>{
-const b=businesses.find(x=>x.id===btn.dataset.delete);
-if(b&&confirm(`Ջնջե՞լ «${b.name}»-ը։`)){businesses=businesses.filter(x=>x.id!==b.id);saveBusinesses();renderCategories();renderBusinesses();renderAdminList()}
-});
+  const list=document.getElementById('adminList');
+  if(!businesses.length){
+    list.innerHTML='<p style="color:#64748b">Դեռ բիզնեսներ չկան։</p>';
+    return;
+  }
+  list.innerHTML=businesses.map(b=>`
+    <div class="admin-item">
+      <span><strong>${esc(b.name)}</strong><br><small>${esc(b.category)}</small></span>
+      <div class="nav-actions">
+        <button class="small-btn" data-edit="${esc(b.id)}">Խմբագրել</button>
+        <button class="small-btn delete" data-delete="${esc(b.id)}">Ջնջել</button>
+      </div>
+    </div>`).join('');
+  list.querySelectorAll('[data-edit]').forEach(btn=>{
+    btn.addEventListener('click',()=>editBusiness(btn.dataset.edit));
+  });
+  list.querySelectorAll('[data-delete]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const b=businesses.find(x=>String(x.id)===btn.dataset.delete);
+      if(b&&confirm('Ջնջե՞լ «'+b.name+'» բիզնեսը։')){
+        businesses=businesses.filter(x=>String(x.id)!==btn.dataset.delete);
+        saveBusinesses();renderAll();
+      }
+    });
+  });
 }
-document.getElementById('exportBtn').onclick=()=>{
-const blob=new Blob([JSON.stringify(businesses,null,2)],{type:'application/json'});
-const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='aparan-guide-backup.json';a.click();URL.revokeObjectURL(a.href)
-};
+function editBusiness(id){
+  const b=businesses.find(x=>String(x.id)===String(id));
+  if(!b)return;
+  document.getElementById('businessId').value=b.id;
+  document.getElementById('businessName').value=b.name||'';
+  document.getElementById('businessCategory').value=b.category||categories[0];
+  document.getElementById('businessPhone').value=b.phone||'';
+  document.getElementById('businessAddress').value=b.address||'';
+  document.getElementById('businessDescription').value=b.description||'';
+  document.getElementById('businessImage').value=b.image||'';
+  document.getElementById('businessMap').value=b.map||'';
+  document.getElementById('formTitle').textContent='Խմբագրել բիզնեսը';
+  document.getElementById('businessForm').scrollIntoView({behavior:'smooth'});
+}
+function renderAll(){
+  renderCategories();
+  renderBusinesses();
+  renderAdminList();
+}
+
+document.getElementById('businessForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const id=document.getElementById('businessId').value;
+  const old=id?businesses.find(b=>String(b.id)===String(id)):null;
+  const item={
+    id:id||String(Date.now()),
+    name:document.getElementById('businessName').value.trim(),
+    category:document.getElementById('businessCategory').value,
+    phone:document.getElementById('businessPhone').value.trim(),
+    address:document.getElementById('businessAddress').value.trim(),
+    description:document.getElementById('businessDescription').value.trim(),
+    image:document.getElementById('businessImage').value.trim(),
+    map:document.getElementById('businessMap').value.trim()
+  };
+  if(old)businesses=businesses.map(b=>String(b.id)===String(id)?item:b);
+  else businesses.unshift(item);
+  saveBusinesses();
+  renderAll();
+  resetForm();
+  alert('Բիզնեսի տվյալները պահպանվեցին այս սարքում։');
+});
+
+document.getElementById('adminLogin').addEventListener('click',()=>{
+  if(document.getElementById('adminPin').value==='APARAN2026'){
+    adminUnlocked=true;
+    document.getElementById('adminGate').classList.add('hidden');
+    document.getElementById('adminTools').classList.remove('hidden');
+    document.getElementById('adminError').textContent='';
+    renderAll();
+  }else{
+    document.getElementById('adminError').textContent='Սխալ PIN կոդ։ Փորձիր նորից։';
+  }
+});
+document.getElementById('adminPin').addEventListener('keydown',e=>{
+  if(e.key==='Enter')document.getElementById('adminLogin').click();
+});
+document.getElementById('formReset').addEventListener('click',resetForm);
+document.getElementById('adminOpen').addEventListener('click',openAdmin);
+document.getElementById('adminClose').addEventListener('click',closeAdmin);
+document.getElementById('adminModal').addEventListener('click',e=>{
+  if(e.target.id==='adminModal')closeAdmin();
+});
+
+document.getElementById('exportBtn').addEventListener('click',()=>{
+  const blob=new Blob([JSON.stringify(businesses,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='aparan-guide-backup.json';a.click();
+  URL.revokeObjectURL(url);
+});
+document.getElementById('importBtn').addEventListener('click',()=>{
+  document.getElementById('importFile').click();
+});
+document.getElementById('importFile').addEventListener('change',async e=>{
+  const file=e.target.files[0];
+  if(!file)return;
+  try{
+    const data=JSON.parse(await file.text());
+    if(!Array.isArray(data))throw new Error('Invalid');
+    if(!confirm('Ներմուծումը կփոխարինի ընթացիկ բիզնեսների ցանկը։ Շարունակե՞լ։'))return;
+    businesses=data;
+    saveBusinesses();renderAll();
+    alert('Տվյալները ներմուծվեցին։');
+  }catch(err){alert('Ֆայլը սխալ է կամ չի հաջողվել կարդալ։');}
+  e.target.value='';
+});
+
 document.getElementById('searchInput').addEventListener('input',renderBusinesses);
-document.getElementById('searchBtn').onclick=renderBusinesses;
-renderCategories();renderBusinesses();
+document.getElementById('searchBtn').addEventListener('click',renderBusinesses);
+document.getElementById('homeBtn').addEventListener('click',openHome);
+document.getElementById('foodNavBtn').addEventListener('click',openFood);
+document.getElementById('openFoodBanner').addEventListener('click',openFood);
+document.getElementById('backHome').addEventListener('click',openHome);
+document.getElementById('foodModalClose').addEventListener('click',closeFoodModal);
+document.getElementById('foodModalDone').addEventListener('click',closeFoodModal);
+document.getElementById('foodModal').addEventListener('click',e=>{
+  if(e.target.id==='foodModal')closeFoodModal();
+});
+
+document.getElementById('year').textContent=new Date().getFullYear();
+renderCategories();
+renderBusinesses();
+renderAdminList();
+renderFoodChips();
+renderFood();
 </script>
 </body>
 </html>
