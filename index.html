@@ -1,345 +1,205 @@
+
 <!DOCTYPE html>
 <html lang="hy">
-<head><meta name="google-site-verification" content="aNXOhAy8DIwuRQDPQdr8ya6nrW5robGLAawEAmq-QVM" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aparan Guide 2.0 - Ապարանի ուղեցույց</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f6fb;
-            color: #333;
-            text-align: center;
-        }
-        header {
-            padding: 30px 20px;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        header h1 {
-            margin: 0 0 15px 0;
-            font-size: 24px;
-        }
-        .search-box input {
-            width: 90%;
-            max-width: 420px;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 30px;
-            font-size: 15px;
-            outline: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .categories {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .cat-btn {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 10px 16px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.04);
-            transition: all 0.3s ease;
-        }
-        .cat-btn:hover {
-            background-color: #1a1a2e;
-            color: white;
-            border-color: #1a1a2e;
-        }
-        .section-title {
-            margin: 30px 0 20px 0;
-            font-size: 22px;
-            color: #1a1a2e;
-            font-weight: bold;
-        }
-        .card {
-            background: white;
-            width: 92%;
-            max-width: 420px;
-            margin: 25px auto;
-            border-radius: 24px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            text-align: left;
-            border: 1px solid #edf2f7;
-        }
-        .card-img-top {
-            background: linear-gradient(135deg, #e0eafc, #cfdef3);
-            height: 160px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-        }
-        .card-content {
-            padding: 24px;
-        }
-        .card h3 {
-            margin: 0 0 10px 0;
-            color: #1a1a2e;
-            font-size: 22px;
-            font-weight: 700;
-        }
-        .card p {
-            color: #64748b;
-            font-size: 14px;
-            margin: 6px 0;
-        }
-        .card-desc {
-            margin: 16px 0;
-            color: #475569;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        .btn-group {
-            display: flex;
-            gap: 12px;
-            margin-top: 18px;
-        }
-        .btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 12px;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            display: inline-block;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .btn-call { background: linear-gradient(135deg, #27ae60, #219653); }
-        .btn-whatsapp { background: linear-gradient(135deg, #2ecc71, #27ae60); }
-        .btn-map { background: linear-gradient(135deg, #2563eb, #1d4ed8); width: 100%; margin-top: 12px; box-sizing: border-box; }
-        
-        .add-business {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: white;
-            padding: 40px 20px;
-            margin-top: 50px;
-            border-top-left-radius: 30px;
-            border-top-right-radius-radius: 30px;
-        }
-        .add-business h2 {
-            margin-top: 0;
-            font-size: 22px;
-        }
-        .add-business p {
-            color: #cbd5e1;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        .add-business a {
-            display: inline-block;
-            background: #27ae60;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
-        }
-    </style>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Aparan Guide՝ Ապարանի խանութների, սրճարանների և ծառայությունների առցանց ուղեցույց։">
+<title>Aparan Guide — Ապարանի բիզնեսների ուղեցույց</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#182230;--muted:#64748b;--brand:#176b52;--line:#e5eaf0;--gold:#f2b84b}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+a{color:inherit}button,input,select,textarea{font:inherit}
+header{background:linear-gradient(135deg,#104c3c,#19805f);color:white;padding:20px 16px 28px}
+.top{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-size:21px;font-weight:900}
+.logo span{color:#b8f3d5}
+.top button{border:1px solid #ffffff70;background:#ffffff14;color:white;border-radius:12px;padding:10px 13px;font-weight:700}
+.hero{max-width:1100px;margin:30px auto 0}
+.eyebrow{font-size:12px;letter-spacing:1.8px;color:#b8f3d5;font-weight:800}
+.hero h1{font-size:clamp(29px,6vw,48px);line-height:1.12;margin:10px 0}
+.hero p{max-width:650px;color:#e0f4ea;line-height:1.6;margin:0 0 20px}
+.search{display:flex;gap:8px;max-width:680px}
+.search input{min-width:0;flex:1;padding:15px;border:0;border-radius:13px}
+.search button,.primary{border:0;border-radius:13px;background:var(--gold);color:#2b281e;padding:13px 17px;font-weight:800;cursor:pointer}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 50px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:white;border:1px solid var(--line);border-radius:15px;padding:15px}
+.stat strong{display:block;font-size:22px}
+.stat small{color:var(--muted)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:30px 0 14px}
+.section-head h2{font-size:23px;margin:0}
+.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.categories{display:flex;gap:9px;overflow:auto;padding:2px 0 8px}
+.cat{white-space:nowrap;border:1px solid var(--line);background:white;border-radius:99px;padding:10px 14px;cursor:pointer;color:#334155}
+.cat.active{background:var(--brand);color:white;border-color:var(--brand)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.business{background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 5px 18px #172b3d08}
+.cover{height:135px;background:linear-gradient(135deg,#dcefe6,#f5e8cc);display:grid;place-items:center;font-size:52px;position:relative}
+.cover small{position:absolute;left:12px;top:12px;background:#ffffffdc;border-radius:30px;padding:5px 9px;font-size:11px;color:#334155;font-weight:800}
+.biz-body{padding:15px;display:flex;flex-direction:column;flex:1}
+.biz-body h3{font-size:18px;margin:0 0 6px}
+.biz-body p{font-size:13px;line-height:1.5;color:var(--muted);margin:0 0 12px}
+.meta{font-size:13px;color:#475569;margin-bottom:7px}
+.actions{display:flex;gap:8px;margin-top:auto;padding-top:8px}
+.actions a,.actions button{flex:1;text-align:center;text-decoration:none;border-radius:10px;padding:10px 7px;font-size:13px;font-weight:800;border:1px solid var(--line);background:#fff}
+.actions .call{background:var(--brand);color:#fff;border-color:var(--brand)}
+.empty{background:white;border:1px dashed #cbd5e1;border-radius:15px;padding:30px;text-align:center;color:var(--muted);grid-column:1/-1}
+.notice{background:#fff7df;border:1px solid #f5df9d;color:#75551b;padding:13px 15px;border-radius:13px;font-size:13px;line-height:1.55;margin-top:22px}
+footer{background:#102b24;color:#d6e7df;padding:28px 16px;text-align:center;font-size:13px}
+footer strong{font-size:17px;color:white}
+.modal{position:fixed;inset:0;background:#07150f9c;display:none;align-items:center;justify-content:center;padding:14px;z-index:10}
+.modal.open{display:flex}
+.panel{background:white;border-radius:18px;width:min(600px,100%);max-height:92vh;overflow:auto;padding:20px}
+.panel-head{display:flex;justify-content:space-between;align-items:center}
+.panel h2{margin:0 0 14px}
+.close{border:0;background:#eef2f5;border-radius:10px;padding:8px 12px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field.full{grid-column:1/-1}
+.field label{font-size:13px;font-weight:750}
+.field input,.field select,.field textarea{border:1px solid #d6dee7;border-radius:10px;padding:11px;background:white;min-width:0}
+.field textarea{min-height:75px;resize:vertical}
+.form-actions{display:flex;gap:9px;margin-top:14px}
+.form-actions button{flex:1}
+.secondary{border:1px solid var(--line);background:white;border-radius:12px;padding:12px;font-weight:750}
+.admin-list{margin-top:20px;border-top:1px solid var(--line);padding-top:10px}
+.admin-row{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+.admin-row button{border:1px solid #fecaca;background:#fff1f2;color:#b91c1c;border-radius:8px;padding:7px 9px}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cover{height:115px}.hero{margin-top:23px}}
+@media(max-width:500px){.grid{grid-template-columns:1fr}.stats{gap:7px}.stat{padding:11px}.stat strong{font-size:19px}.search{flex-direction:column}.search button{width:100%}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head h2{font-size:21px}.top button{font-size:12px;padding:9px}}
+</style>
 </head>
 <body>
-
-    <header>
-        <h1>📍 Aparan Guide 2.0</h1>
-        <div class="search-box">
-            <input type="text" placeholder="🔍 Որոնել վայր, սրճարան, ծառայություն...">
-        </div>
-    </header>
-
-    <!-- Կատեգորիաներ -->
-    <div class="categories">
-        <div class="cat-btn">🏨 Հյուրանոցներ</div>
-        <div class="cat-btn">🌲 Հանգստյան գոտիներ</div>
-        <div class="cat-btn">🍔 Food court</div>
-        <div class="cat-btn">⛽ Բենզալցակայաններ</div>
-        <div class="cat-btn">🔵 Գազալցակայաններ</div>
-        <div class="cat-btn">🚿 Ավտոլվացում</div>
-        <div class="cat-btn">🔧 Մեքենաների նորոգում</div>
-        <div class="cat-btn">✂️ Վարսավիրանոց</div>
-        <div class="cat-btn">☕ Սրճարան</div>
-    </div>
-
-    <h2 class="section-title">Ապարանի լավագույն վայրերը</h2>
-
-    <!-- 1. Հյուրանոցներ -->
-    <div class="card">
-        <div class="card-img-top">🏨</div>
-        <div class="card-content">
-            <h3>Ապարան Հյուրանոց</h3>
-            <p>📁 Հյուրանոցներ</p>
-            <p>📍 ք. Ապարան</p>
-            <p>⏱️ Աշխատանքային ժամեր: 24/7</p>
-            <div class="card-desc">Հարմարավետ համարներ և բարձրակարգ սպասարկում։</div>
-            <div class="btn-group">
-                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
-                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
-            </div>
-            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
-        </div>
-    </div>
-
-    <!-- 2. Հանգստյան գոտիներ -->
-    <div class="card">
-        <div class="card-img-top">🌲</div>
-        <div class="card-content">
-            <h3>Ապարանի Հանգստյան Գոտի</h3>
-            <p>📁 Հանգստյան գոտիներ</p>
-            <p>📍 Ապարանի տարածաշրջան</p>
-            <p>⏱️ Աշխատանքային ժամեր: 09:00 - 23:00</p>
-            <div class="card-desc">Հարմարավետ քոթեջներ, բնություն և հանգիստ ձեր ընտանիքի համար։</div>
-            <div class="btn-group">
-                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
-                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
-            </div>
-            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
-        </div>
-    </div>
-
-    <!-- 3. Food court -->
-    <div class="card">
-        <div class="card-img-top">🍔</div>
-        <div class="card-content">
-            <h3>Aparan Food Court</h3>
-            <p>📁 Food court</p>
-            <p>📍 Մայրուղու հարևանությամբ</p>
-            <p>⏱️ Աշխատանքային ժամեր: 10:00 - 22:00</p>
-            <div class="card-desc">Արագ և համեղ սնունդ, մեծ տեսականի ձեր ճանապարհին։</div>
-            <div class="btn-group">
-                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
-                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
-            </div>
-            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
-        </div>
-    </div>
-
-    <!-- 4. Բենզալցակայան -->
-    <div class="card">
-        <div class="card-img-top">⛽</div>
-        <div class="card-content">
-            <h3>Բենզալցակայան Ապարանում</h3>
-            <p>📁 Բենզալցակայաններ</p>
-            <p>📍 Ապարանի մայրուղի</p>
-            <p>⏱️ Աշխատանքային ժամեր: 24/7</p>
-            <div class="card-desc">Բարձր որակի վառելիք և արագ սպասարկում։</div>
-            <div class="btn-group">
-                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
-                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
-            </div>
-            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
-        </div>
-    </div>
-
-    <!-- 5. Գազալցակայան -->
-    <div class="card">
-        <div class="card-img-top">🔵</div>
-        <div class="card-content">
-            <h3>Գազալցակայան</h3>
-            <p>📁 Գազալցակայաններ</p>
-            <p>📍 Ապարանի մատույցներ</p>
-            <p>⏱️ Աշխատանքային ժամեր: 24/7</p>
-            <div class="card-desc">Անվտանգ և արագ լիցքավորում շուրջօրյա։</div>
-            <div class="btn-group">
-                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
-                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
-            </div>
-            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
-        </div>
-    </div>
-
-    <!-- 6. Ավտոլվացում -->
-    <div class="card">
-        <div class="card-img-top">🚿</div>
-        <div class="card-content">
-            <h3>Ավտոլվացման կետ</h3>
-            <p>📁 Ավտոլվացման կետեր</p>
-            <p>📍 ք. Ապարան</p>
-            <p>⏱️ Աշխատանքային ժամեր: 09:00 - 20:00</p>
-            <div class="card-desc">Մեքենայի արագ և մաքուր լվացում բարձր որակով։</div>
-            <div class="btn-group">
-                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
-                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
-            </div>
-            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
-        </div>
-    </div>
-
-    <!-- 7. Մեքենաների նորոգում -->
-    <div class="card">
-        <div class="card-img-top">🔧</div>
-        <div class="card-content">
-            <h3>Ավտոտեխսպասարկում</h3>
-            <p>📁 Մեքենաների նորոգում</p>
-            <p>📍 ք. Ապարան</p>
-            <p>⏱️ Աշխատանքային ժամեր: 09:00 - 19:00</p>
-            <div class="card-desc">Ընթացային մասերի նորոգում, արհեստավարժ վարպետներ։</div>
-            <div class="btn-group">
-                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
-                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
-            </div>
-            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
-        </div>
-    </div>
-
-    <!-- 8. Վարսավիրանոց -->
-    <div class="card">
-        <div class="card-img-top">✂️</div>
-        <div class="card-content">
-            <h3>Ապարանի Վարսավիրանոց</h3>
-            <p>📁 Վարսավիրանոց</p>
-            <p>📍 ք. Ապարան, Կենտրոն</p>
-            <p>⏱️ Աշխատանքային ժամեր: 10:00 - 19:00</p>
-            <div class="card-desc">Կանացի և տղամարդու սանրվածքներ, ժամանակակից ոճ։</div>
-            <div class="btn-group">
-                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
-                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
-            </div>
-            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
-        </div>
-    </div>
-
-    <!-- 9. Սրճարան -->
-    <div class="card">
-        <div class="card-img-top">☕</div>
-        <div class="card-content">
-            <h3>Ապարանի Սրճարան</h3>
-            <p>📁 Սրճարան</p>
-            <p>📍 ք. Ապարան</p>
-            <p>⏱️ Աշխատանքային ժամեր: 09:00 - 23:00</p>
-            <div class="card-desc">Համեղ սուրճ, թարմ թխվածքներ և հաճելի մթնոլորտ։</div>
-            <div class="btn-group">
-                <a href="tel:+37400000000" class="btn btn-call">📞 Զանգել</a>
-                <a href="https://wa.me/" class="btn btn-whatsapp">💬 WhatsApp</a>
-            </div>
-            <a href="#" class="btn btn-map">🗺️ Բացել քարտեզում</a>
-        </div>
-    </div>
-
-    <!-- Բիզնեսի ավելացման բաժին -->
-    <div class="add-business">
-        <h2>Ունե՞ք բիզնես կամ ծառայություն Ապարանում</h2>
-        <p>Ավելացրեք ձեր տեղեկությունները ուղեցույցում և դարձեք տեսանելի բոլորի համար։</p>
-        <a href="tel:+37400000000">Ավելացնել բիզնեսս</a>
-    </div>
-
+<header>
+<div class="top"><div class="logo">APARAN <span>GUIDE</span></div><button id="adminOpen">⚙ Ադմին</button></div>
+<div class="hero">
+<div class="eyebrow">Քո քաղաքի ուղեցույցը</div>
+<h1>Ապարանի բիզնեսները՝<br>մեկ վայրում</h1>
+<p>Գտիր խանութներ, սրճարաններ և ծառայություններ։ Տես կոնտակտները, կապ հաստատիր և բացահայտիր քո քաղաքի հնարավորությունները։</p>
+<div class="search"><input id="searchInput" type="search" placeholder="Որոնիր խանութ կամ ծառայություն…"><button id="searchBtn">Որոնել</button></div>
+</div>
+</header>
+<main>
+<div class="stats">
+<div class="stat"><strong id="businessCount">0</strong><small>բիզնես</small></div>
+<div class="stat"><strong id="categoryCount">0</strong><small>կատեգորիա</small></div>
+<div class="stat"><strong>24/7</strong><small>առցանց ուղեցույց</small></div>
+</div>
+<div class="section-head"><div><h2>Բացահայտիր Ապարանը</h2><p>Ընտրիր կատեգորիա կամ որոնիր բիզնես։</p></div></div>
+<div class="categories" id="categories"></div>
+<div class="section-head"><div><h2 id="listTitle">Բիզնեսներ</h2><p>Կոնտակտներն ու տվյալները լրացվում են ադմինի կողմից։</p></div></div>
+<div class="grid" id="businessGrid"></div>
+<div class="notice"><strong>Տեղեկացում․</strong> Ադմինի բաժնից ավելացրու միայն ստուգված բիզնեսների անուններ, հասցեներ ու հեռախոսահամարներ։ Այս նախնական տարբերակում տվյալները պահվում են միայն այն սարքի բրաուզերում, որտեղ ավելացվել են։ Բոլոր այցելուներին նույն տվյալները ցույց տալու համար անհրաժեշտ է միացնել առցանց տվյալների բազա։</div>
+</main>
+<footer><strong>APARAN GUIDE</strong><p>Ապարանի տեղական բիզնեսների առցանց ուղեցույց</p><span>Գտիր տեղականը • Աջակցիր տեղականին</span></footer>
+<div class="modal" id="adminModal" role="dialog" aria-modal="true">
+<div class="panel">
+<div class="panel-head"><h2>Ադմինի բաժին</h2><button class="close" id="closeAdmin">Փակել ✕</button></div>
+<div id="adminGate">
+<p style="color:#64748b;font-size:14px">Ցուցադրական մուտք է․ սա դեռ անվտանգ առցանց ադմինային համակարգ չէ։</p>
+<div class="field"><label for="adminPin">Ադմինի կոդ</label><input id="adminPin" type="password" placeholder="Մուտքագրիր կոդը" autocomplete="off"></div>
+<div class="form-actions"><button class="primary" id="unlockBtn">Մուտք գործել</button></div>
+<p id="gateMessage" style="color:#b91c1c;font-size:13px"></p>
+</div>
+<div id="adminTools" hidden>
+<p style="font-size:13px;color:#64748b">Ավելացրու, խմբագրիր կամ ջնջիր բիզնես։</p>
+<form id="businessForm">
+<input type="hidden" id="editId">
+<div class="formgrid">
+<div class="field"><label for="bizName">Բիզնեսի անուն *</label><input id="bizName" required maxlength="90" placeholder="Խանութի անունը"></div>
+<div class="field"><label for="bizCategory">Կատեգորիա *</label><select id="bizCategory" required><option>Մթերային խանութ</option><option>Հագուստ և կոշիկ</option><option>Շինանյութ</option><option>Ավտոապրանքներ</option><option>Սրճարան և ռեստորան</option><option>Գեղեցկություն</option><option>Տեխնիկա</option><option>Ծառայություններ</option><option>Այլ</option></select></div>
+<div class="field full"><label for="bizDescription">Նկարագրություն</label><textarea id="bizDescription" maxlength="400" placeholder="Ինչ է առաջարկում բիզնեսը"></textarea></div>
+<div class="field"><label for="bizPhone">Հեռախոս</label><input id="bizPhone" type="tel" placeholder="+374…"></div>
+<div class="field"><label for="bizAddress">Հասցե</label><input id="bizAddress" placeholder="Ապարան, …"></div>
+<div class="field full"><label for="bizImage">Նկարի հղում (ըստ ցանկության)</label><input id="bizImage" type="url" placeholder="https://…"></div>
+<div class="field full"><label for="bizMap">Քարտեզի հղում (ըստ ցանկության)</label><input id="bizMap" type="url" placeholder="Google Maps-ի հղում"></div>
+</div>
+<div class="form-actions"><button class="primary" type="submit">Պահպանել բիզնեսը</button><button class="secondary" type="button" id="clearForm">Մաքրել</button></div>
+</form>
+<div class="admin-list"><h3>Ավելացված բիզնեսներ</h3><div id="adminBusinessList"></div></div>
+<button class="secondary" id="exportBtn" style="width:100%;margin-top:12px">Ներբեռնել պահուստային JSON</button>
+</div>
+</div>
+</div>
+<script>
+const STORAGE_KEY='aparanGuideBusinessesV1';
+const categories=['Բոլորը','Մթերային խանութ','Հագուստ և կոշիկ','Շինանյութ','Ավտոապրանքներ','Սրճարան և ռեստորան','Գեղեցկություն','Տեխնիկա','Ծառայություններ','Այլ'];
+const icons={'Մթերային խանութ':'🛒','Հագուստ և կոշիկ':'👕','Շինանյութ':'🧱','Ավտոապրանքներ':'🚗','Սրճարան և ռեստորան':'☕','Գեղեցկություն':'💈','Տեխնիկա':'📱','Ծառայություններ':'🧰','Այլ':'🏪'};
+let businesses=loadBusinesses(),activeCategory='Բոլորը',adminUnlocked=false;
+function loadBusinesses(){try{const d=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');return Array.isArray(d)?d:[]}catch(e){return []}}
+function saveBusinesses(){localStorage.setItem(STORAGE_KEY,JSON.stringify(businesses))}
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function safeUrl(s=''){try{const u=new URL(s);return ['http:','https:'].includes(u.protocol)?u.href:''}catch(e){return ''}}
+function renderCategories(){
+const el=document.getElementById('categories');
+el.innerHTML=categories.map(c=>`<button class="cat ${activeCategory===c?'active':''}" data-cat="${esc(c)}">${c==='Բոլորը'?'✨':(icons[c]||'🏪')} ${esc(c)}</button>`).join('');
+el.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{activeCategory=b.dataset.cat;renderCategories();renderBusinesses()});
+}
+function renderBusinesses(){
+const q=document.getElementById('searchInput').value.trim().toLocaleLowerCase('hy');
+const list=businesses.filter(b=>(activeCategory==='Բոլորը'||b.category===activeCategory)&&[b.name,b.category,b.description,b.address].join(' ').toLocaleLowerCase('hy').includes(q));
+document.getElementById('businessCount').textContent=businesses.length;
+document.getElementById('categoryCount').textContent=new Set(businesses.map(b=>b.category)).size;
+document.getElementById('listTitle').textContent=activeCategory==='Բոլորը'?'Բոլոր բիզնեսները':activeCategory;
+const grid=document.getElementById('businessGrid');
+if(!list.length){grid.innerHTML=`<div class="empty"><div style="font-size:34px">🏪</div><strong>${businesses.length?'Համապատասխան բիզնես չգտնվեց':'Բիզնեսների ցանկը դեռ դատարկ է'}</strong><p>${businesses.length?'Փորձիր այլ որոնում կամ կատեգորիա։':'Ադմինի բաժնից ավելացրու Ապարանի առաջին իրական բիզնեսը։'}</p></div>`;return}
+grid.innerHTML=list.map(b=>{
+const image=safeUrl(b.image);
+const cover=image?`<img src="${esc(image)}" alt="${esc(b.name)}" style="width:100%;height:100%;object-fit:cover">`:(icons[b.category]||'🏪');
+const phone=(b.phone||'').replace(/[^\d+]/g,'');
+const map=safeUrl(b.map);
+return `<article class="business"><div class="cover">${cover}<small>${esc(b.category)}</small></div><div class="biz-body"><h3>${esc(b.name)}</h3><p>${esc(b.description||'Տեղական բիզնես՝ Ապարանում։ Կապ հաստատիր՝ մանրամասներն իմանալու համար։')}</p>${b.address?`<div class="meta">📍 ${esc(b.address)}</div>`:''}${b.phone?`<div class="meta">📞 ${esc(b.phone)}</div>`:''}<div class="actions">${phone?`<a class="call" href="tel:${esc(phone)}">Զանգահարել</a>`:''}${map?`<a href="${esc(map)}" target="_blank" rel="noopener">Քարտեզ</a>`:''}${!phone&&!map?`<button type="button" onclick="alert('Կոնտակտային տվյալները դեռ լրացված չեն։')">Մանրամասներ</button>`:''}</div></div></article>`
+}).join('');
+}
+const modal=document.getElementById('adminModal');
+document.getElementById('adminOpen').onclick=()=>{modal.classList.add('open');renderAdminList()};
+document.getElementById('closeAdmin').onclick=()=>modal.classList.remove('open');
+modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open')};
+document.getElementById('unlockBtn').onclick=()=>{
+if(document.getElementById('adminPin').value==='APARAN2026'){
+adminUnlocked=true;document.getElementById('adminGate').hidden=true;document.getElementById('adminTools').hidden=false;renderAdminList()
+}else document.getElementById('gateMessage').textContent='Կոդը սխալ է։ Ցուցադրական կոդը՝ APARAN2026։ Սա անվտանգ մուտքի համակարգ չէ։'
+};
+function clearForm(){document.getElementById('businessForm').reset();document.getElementById('editId').value=''}
+document.getElementById('clearForm').onclick=clearForm;
+document.getElementById('businessForm').onsubmit=e=>{
+e.preventDefault();if(!adminUnlocked)return;
+const id=document.getElementById('editId').value||String(Date.now());
+const b={id,name:document.getElementById('bizName').value.trim(),category:document.getElementById('bizCategory').value,description:document.getElementById('bizDescription').value.trim(),phone:document.getElementById('bizPhone').value.trim(),address:document.getElementById('bizAddress').value.trim(),image:document.getElementById('bizImage').value.trim(),map:document.getElementById('bizMap').value.trim()};
+if(!b.name)return;
+const i=businesses.findIndex(x=>x.id===id);if(i>=0)businesses[i]=b;else businesses.unshift(b);
+saveBusinesses();clearForm();renderCategories();renderBusinesses();renderAdminList();
+};
+function renderAdminList(){
+const el=document.getElementById('adminBusinessList');
+if(!businesses.length){el.innerHTML='<p style="color:#64748b;font-size:13px">Դեռ բիզնեսներ չկան։</p>';return}
+el.innerHTML=businesses.map(b=>`<div class="admin-row"><span><strong>${esc(b.name)}</strong><br><small>${esc(b.category)}</small></span><span><button data-edit="${esc(b.id)}" style="border-color:#cbd5e1;background:#f8fafc;color:#334155">Խմբագրել</button> <button data-delete="${esc(b.id)}">Ջնջել</button></span></div>`).join('');
+el.querySelectorAll('[data-edit]').forEach(btn=>btn.onclick=()=>{
+const b=businesses.find(x=>x.id===btn.dataset.edit);if(!b)return;
+document.getElementById('editId').value=b.id;
+document.getElementById('bizName').value=b.name;
+document.getElementById('bizCategory').value=b.category;
+document.getElementById('bizDescription').value=b.description||'';
+document.getElementById('bizPhone').value=b.phone||'';
+document.getElementById('bizAddress').value=b.address||'';
+document.getElementById('bizImage').value=b.image||'';
+document.getElementById('bizMap').value=b.map||'';
+document.getElementById('businessForm').scrollIntoView({behavior:'smooth'})
+});
+el.querySelectorAll('[data-delete]').forEach(btn=>btn.onclick=()=>{
+const b=businesses.find(x=>x.id===btn.dataset.delete);
+if(b&&confirm(`Ջնջե՞լ «${b.name}»-ը։`)){businesses=businesses.filter(x=>x.id!==b.id);saveBusinesses();renderCategories();renderBusinesses();renderAdminList()}
+});
+}
+document.getElementById('exportBtn').onclick=()=>{
+const blob=new Blob([JSON.stringify(businesses,null,2)],{type:'application/json'});
+const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='aparan-guide-backup.json';a.click();URL.revokeObjectURL(a.href)
+};
+document.getElementById('searchInput').addEventListener('input',renderBusinesses);
+document.getElementById('searchBtn').onclick=renderBusinesses;
+renderCategories();renderBusinesses();
+</script>
 </body>
 </html>
